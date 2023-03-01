@@ -1,0 +1,6 @@
+generation:
+    telemetryEnabled: false
+    sdkClassName: honeyhive
+go:
+    version: 0.3.0
+    packageName: github.com/honeyhive-ai/honeyhive-go-sdk
