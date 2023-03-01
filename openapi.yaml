@@ -4,7 +4,7 @@ info:
   description: |-
     HoneyHive API allows you to programatically evaluate, deploy, monitor and fine-tune both closed and open-source large language models for production use-cases.
   contact:
-    email: support@honeyhive.ai
+    email: dhruv@honeyhive.ai
   version: 0.0.0
 externalDocs:
   description: HoneyHive Docs
@@ -329,6 +329,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResponseBadRequest'
+  
+  /generations/log:
+    post:
+      tags:
+        - Generation
+      summary: Ingest Single Generation
+      description: This endpoint ingests a single generation.
+      operationId: ingestGenerations
+      requestBody:
+        description: Ingest single generation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SingleGenerationInput'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SingleGenerationOutput'
+        '400':
+          description: Bad Request error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponseBadRequest'
+
   /feedback:
     post:
       tags:
@@ -690,6 +719,8 @@ components:
           type: string
         prompts:
             $ref: '#/components/schemas/Prompts'
+        input:
+          type: object
         source:
           type: string
         model_id:
@@ -716,7 +747,7 @@ components:
     TaskGenerationOutput:
       type: object
       properties:
-        prompt:
+        version:
           type: string
         generation:
           type: string
@@ -803,6 +834,29 @@ components:
           items:
             $ref: '#/components/schemas/Generation'
 
+    SingleGenerationInput:
+      type: object
+      properties:
+        task:
+          type: string
+        model:
+          type: string
+        hyperparameters:
+          $ref: '#/components/schemas/HyperParameters'
+        prompt:
+          type: string
+        inputs:
+          type: object
+        generation:
+          type: string
+        response:
+          type: object
+        cost:
+          type: number
+        latency:
+          type: number
+        source:
+          type: string
 
     GenerationInput:
       type: object
@@ -828,7 +882,7 @@ components:
         generated_at:
           type: string
           example: "2023-02-08T17:05:45.990Z"
-        id:
+        generation_id:
           type: string
           example: "123"
 
@@ -839,6 +893,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GenerationOutput'
+
+    SingleGenerationOutput:
+      type: object
+      properties:
+        version:
+          type: string
+        generation:
+          type: string
+        generation_id:
+          type: string
+          example: "123"
+        total_tokens:
+          type: integer
+        completion_tokens:
+          type: integer
+        cost:
+          type: number
+        latency:
+          type: number
 
     Feedback:
       type: object
@@ -884,6 +957,10 @@ components:
         prescence_penalty:
           type: integer
           example: 0
+        stop:
+          type: array
+          items:
+            type: string
 
     Metric:
       type: object
