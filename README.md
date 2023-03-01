@@ -27,9 +27,9 @@ package main
 import (
     "context"
     "log"
-    "github.com/speakeasy-sdks/honeyhive-go-sdk"
-    "github.com/speakeasy-sdks/honeyhive-go-sdk/pkg/models/shared"
-    "github.com/speakeasy-sdks/honeyhive-go-sdk/pkg/models/operations"
+    "github.com/honeyhive-ai/honeyhive-go-sdk"
+    "github.com/honeyhive-ai/honeyhive-go-sdk/pkg/models/shared"
+    "github.com/honeyhive-ai/honeyhive-go-sdk/pkg/models/operations"
 )
 
 func main() {
@@ -86,6 +86,7 @@ func main() {
 
 * `GetGeneration` - Get Generations
 * `IngestGenerations` - Create Generation for Task
+* `IngestSingleGeneration` - Ingest Single Generation
 * `ModelPromptCreateGeneration` - Create Generation for Model and Prompt
 * `TaskCreateGeneration` - Create Generation for Task
 

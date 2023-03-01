@@ -10,6 +10,7 @@ type TaskGenerationInputUserProperties struct {
 
 type TaskGenerationInput struct {
 	BestOf          *int64                              `json:"best_of,omitempty"`
+	Input           map[string]interface{}              `json:"input,omitempty"`
 	Metric          *string                             `json:"metric,omitempty"`
 	ModelID         *string                             `json:"model_id,omitempty"`
 	Prompts         *Prompts                            `json:"prompts,omitempty"`
