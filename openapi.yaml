@@ -5,7 +5,7 @@ info:
     HoneyHive API allows you to programatically evaluate, deploy, monitor and fine-tune both closed and open-source large language models for production use-cases.
   contact:
     email: dhruv@honeyhive.ai
-  version: 0.0.0
+  version: 0.0.1
 externalDocs:
   description: HoneyHive Docs
   url: https://docs.honeyhive.ai/api-reference/authentication
