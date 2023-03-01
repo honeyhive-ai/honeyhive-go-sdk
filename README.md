@@ -11,7 +11,7 @@
 ## SDK Installation
 
 ```bash
-go get github.com/speakeasy-sdks/honeyhive-go-sdk
+go get github.com/honeyhive-ai/honeyhive-go-sdk
 ```
 <!-- End SDK Installation -->
 
