@@ -336,7 +336,7 @@ paths:
         - Generation
       summary: Ingest Single Generation
       description: This endpoint ingests a single generation.
-      operationId: ingestGenerations
+      operationId: ingestSingleGeneration
       requestBody:
         description: Ingest single generation
         content:
