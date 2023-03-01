@@ -158,6 +158,70 @@ func (s *generation) IngestGenerations(ctx context.Context, request operations.I
 	return res, nil
 }
 
+// IngestSingleGeneration - Ingest Single Generation
+// This endpoint ingests a single generation.
+func (s *generation) IngestSingleGeneration(ctx context.Context, request operations.IngestSingleGenerationRequest) (*operations.IngestSingleGenerationResponse, error) {
+	baseURL := s.serverURL
+	url := strings.TrimSuffix(baseURL, "/") + "/generations/log"
+
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	if err != nil {
+		return nil, fmt.Errorf("error serializing request body: %w", err)
+	}
+	if bodyReader == nil {
+		return nil, fmt.Errorf("request body is required")
+	}
+
+	req, err := http.NewRequestWithContext(ctx, "POST", url, bodyReader)
+	if err != nil {
+		return nil, fmt.Errorf("error creating request: %w", err)
+	}
+
+	req.Header.Set("Content-Type", reqContentType)
+
+	client := s.securityClient
+
+	httpRes, err := client.Do(req)
+	if err != nil {
+		return nil, fmt.Errorf("error sending request: %w", err)
+	}
+	if httpRes == nil {
+		return nil, fmt.Errorf("error sending request: no response")
+	}
+	defer httpRes.Body.Close()
+
+	contentType := httpRes.Header.Get("Content-Type")
+
+	res := &operations.IngestSingleGenerationResponse{
+		StatusCode:  httpRes.StatusCode,
+		ContentType: contentType,
+	}
+	switch {
+	case httpRes.StatusCode == 200:
+		switch {
+		case utils.MatchContentType(contentType, `application/json`):
+			var out *shared.SingleGenerationOutput
+			if err := utils.UnmarshalJsonFromResponseBody(httpRes.Body, &out); err != nil {
+				return nil, err
+			}
+
+			res.SingleGenerationOutput = out
+		}
+	case httpRes.StatusCode == 400:
+		switch {
+		case utils.MatchContentType(contentType, `application/json`):
+			var out *shared.APIResponseBadRequest
+			if err := utils.UnmarshalJsonFromResponseBody(httpRes.Body, &out); err != nil {
+				return nil, err
+			}
+
+			res.APIResponseBadRequest = out
+		}
+	}
+
+	return res, nil
+}
+
 // ModelPromptCreateGeneration - Create Generation for Model and Prompt
 // This endpoint generates text using a given model and prompt.
 func (s *generation) ModelPromptCreateGeneration(ctx context.Context, request operations.ModelPromptCreateGenerationRequest) (*operations.ModelPromptCreateGenerationResponse, error) {

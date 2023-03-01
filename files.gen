@@ -26,6 +26,7 @@ pkg/models/operations/createfeedback.go
 pkg/models/operations/findfinetunedmodels.go
 pkg/models/operations/getgeneration.go
 pkg/models/operations/ingestgenerations.go
+pkg/models/operations/ingestsinglegeneration.go
 pkg/models/operations/modelpromptcreategeneration.go
 pkg/models/operations/taskcreategeneration.go
 pkg/models/operations/createmetric.go
@@ -51,8 +52,10 @@ pkg/models/shared/generationoutput.go
 pkg/models/shared/generationinput.go
 pkg/models/shared/generations.go
 pkg/models/shared/generation.go
-pkg/models/shared/modelpromptgenerationoutput.go
+pkg/models/shared/singlegenerationoutput.go
+pkg/models/shared/singlegenerationinput.go
 pkg/models/shared/hyperparameters.go
+pkg/models/shared/modelpromptgenerationoutput.go
 pkg/models/shared/modelpromptgenerationinput.go
 pkg/models/shared/taskgenerationoutput.go
 pkg/models/shared/taskgenerationinput.go
