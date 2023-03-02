@@ -62,7 +62,7 @@ func WithSecurity(security shared.Security) SDKOption {
 func New(opts ...SDKOption) *Honeyhive {
 	sdk := &Honeyhive{
 		_language:   "go",
-		_sdkVersion: "0.4.1",
+		_sdkVersion: "0.4.2",
 		_genVersion: "1.7.1",
 	}
 	for _, opt := range opts {

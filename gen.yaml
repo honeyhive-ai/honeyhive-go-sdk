@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 7fbe4d7c6493f50ce1709f88a72cbe9f
+  docChecksum: d0d4b49b87699cb14213aaf3136d6ffb
   docVersion: 0.0.1
   speakeasyVersion: 1.7.1
 generation:
@@ -8,5 +8,5 @@ generation:
   sdkClassName: honeyhive
   sdkFlattening: false
 go:
-  version: 0.4.1
+  version: 0.4.2
   packageName: github.com/honeyhive-ai/honeyhive-go-sdk
