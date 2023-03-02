@@ -718,7 +718,9 @@ components:
         task:
           type: string
         prompts:
-            $ref: '#/components/schemas/Prompts'
+          type: array
+          items:
+            type: string
         input:
           type: object
         source:
@@ -851,8 +853,6 @@ components:
           type: string
         response:
           type: object
-        cost:
-          type: number
         latency:
           type: number
         source:
@@ -922,15 +922,20 @@ components:
           type: string
         feedback_json:
           type: object
-          properties:
-            score:
-              type: integer
-            comment:
-              type: string
+
+    FeedbackResponse:
+      type: object
+      properties:
+        task:
+          type: string
+        generation_id:
+          type: string
+        feedback_json:
+          type: object
         timestamp:
           type: string
           example: "2023-02-08T17:05:45.990Z"
-
+    
     findPromptsInput:
       type: object
       properties:
@@ -949,13 +954,13 @@ components:
           type: integer
           example: 800
         top_p: 
-          type: integer
+          type: number
           example: 1
         frequency_penalty:
-          type: integer
+          type: number
           example: 0
-        prescence_penalty:
-          type: integer
+        presence_penalty:
+          type: number
           example: 0
         stop:
           type: array

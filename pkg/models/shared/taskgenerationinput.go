@@ -13,7 +13,7 @@ type TaskGenerationInput struct {
 	Input           map[string]interface{}              `json:"input,omitempty"`
 	Metric          *string                             `json:"metric,omitempty"`
 	ModelID         *string                             `json:"model_id,omitempty"`
-	Prompts         *Prompts                            `json:"prompts,omitempty"`
+	Prompts         []string                            `json:"prompts,omitempty"`
 	ProviderAPIKeys *TaskGenerationInputProviderAPIKeys `json:"provider_api_keys,omitempty"`
 	Sampling        *string                             `json:"sampling,omitempty"`
 	Source          *string                             `json:"source,omitempty"`

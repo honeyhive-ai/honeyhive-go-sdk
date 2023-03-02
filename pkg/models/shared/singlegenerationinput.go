@@ -1,8 +1,7 @@
 package shared
 
 type SingleGenerationInput struct {
-	Cost            *float64               `json:"cost,omitempty"`
-	Generation      *string                `json:"generation,omitempty"`
+    Generation      *string                `json:"generation,omitempty"`
 	Hyperparameters *HyperParameters       `json:"hyperparameters,omitempty"`
 	Inputs          map[string]interface{} `json:"inputs,omitempty"`
 	Latency         *float64               `json:"latency,omitempty"`
