@@ -53,7 +53,8 @@ func main() {
     // the model used to generate the response, ex. "text-davinci-003"
     model := "<MODEL ENGINE>"
 
-    // the inputs used to generate the response ex. map[string]interface{}{"var": "test"}
+    // the input variable that was inserted into the prompt 
+    // ex. map[string]interface{}{"var": "test"}
     inputs := map[string]interface{}{
         // <THE INPUT INSERTED INTO THE PROMPT>
     }
