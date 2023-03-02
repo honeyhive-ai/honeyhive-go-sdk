@@ -6,8 +6,8 @@ type SingleGenerationInput struct {
 	Inputs          map[string]interface{} `json:"inputs,omitempty"`
 	Latency         *float64               `json:"latency,omitempty"`
 	Model           *string                `json:"model,omitempty"`
-	Prompt          *string                `json:"prompt,omitempty"`
-	Response        map[string]interface{} `json:"response,omitempty"`
+	PromptTemplate          *string                `json:"prompt_template,omitempty"`
+	Usage        map[string]int `json:"usage,omitempty"`
 	Source          *string                `json:"source,omitempty"`
 	Task            *string                `json:"task,omitempty"`
 }
