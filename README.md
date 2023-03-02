@@ -158,10 +158,13 @@ func main() {
     generationID := "<GENERATION ID>"
 
     // the feedback json can be like
+    // it can include generation feedback as well as user properties
     // ex. map[string]interface{ 
     // "feedback_provided": true,
     // "accepted": true,
     // "correction": "This is indeed a test",
+    // "user_country": "US",
+    // "user_tenant": "honeyhive",
     // } 
     feedbackJSON := map[string]interface{}{
         // <YOUR FEEDBACK JSON>
