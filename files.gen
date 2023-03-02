@@ -59,14 +59,14 @@ pkg/models/shared/modelpromptgenerationoutput.go
 pkg/models/shared/modelpromptgenerationinput.go
 pkg/models/shared/taskgenerationoutput.go
 pkg/models/shared/taskgenerationinput.go
-pkg/models/shared/prompts.go
-pkg/models/shared/prompt.go
 pkg/models/shared/metric.go
 pkg/models/shared/metricsresponse.go
 pkg/models/shared/findmetricsinput.go
+pkg/models/shared/prompt.go
 pkg/models/shared/createpromptresponse.go
 pkg/models/shared/createpromptinput.go
 pkg/models/shared/promptdeleteresponse.go
+pkg/models/shared/prompts.go
 pkg/models/shared/findpromptsinput.go
 pkg/models/shared/task.go
 pkg/models/shared/tasks.go
