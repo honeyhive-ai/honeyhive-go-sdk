@@ -39,3 +39,11 @@ Based on:
 - Speakeasy CLI 1.8.4 https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [Go v0.5.1] https://github.com/honeyhive-ai/honeyhive-go-sdk/releases/tag/v0.5.1 - .
+
+## 2023-03-07 03:08:34
+### Changes
+Based on:
+- OpenAPI Doc 0.0.1 ./openapi.yaml
+- Speakeasy CLI 1.8.5 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.5.2] https://github.com/honeyhive-ai/honeyhive-go-sdk/releases/tag/v0.5.2 - .
