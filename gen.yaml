@@ -6,7 +6,7 @@ management:
 generation:
   telemetryEnabled: false
   sdkClassName: honeyhive
-  sdkFlattening: false
+  sdkFlattening: true
 go:
   version: 0.4.2
   packageName: github.com/honeyhive-ai/honeyhive-go-sdk
