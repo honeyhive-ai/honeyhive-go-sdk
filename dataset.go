@@ -36,7 +36,7 @@ func (s *dataset) CreateDataset(ctx context.Context, request operations.CreateDa
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/datasets/"
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -156,7 +156,7 @@ func (s *dataset) FindDatasets(ctx context.Context, request operations.FindDatas
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/datasets/"
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

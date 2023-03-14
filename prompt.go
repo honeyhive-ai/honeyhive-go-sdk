@@ -36,7 +36,7 @@ func (s *prompt) ChangePrompt(ctx context.Context, request operations.ChangeProm
 	baseURL := s.serverURL
 	url := utils.GenerateURL(ctx, baseURL, "/prompts/{id}", request.PathParams)
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -101,7 +101,7 @@ func (s *prompt) CreatePrompt(ctx context.Context, request operations.CreateProm
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/prompts"
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -221,7 +221,7 @@ func (s *prompt) FindPrompts(ctx context.Context, request operations.FindPrompts
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/prompts"
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}

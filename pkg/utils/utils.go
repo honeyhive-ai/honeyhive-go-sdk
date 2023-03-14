@@ -16,7 +16,16 @@ const (
 	pathParamTagKey   = "pathParam"
 )
 
-var paramRegex = regexp.MustCompile(`({.*?})`)
+var (
+	paramRegex                       = regexp.MustCompile(`({.*?})`)
+	SerializationMethodToContentType = map[string]string{
+		"json":      "application/json",
+		"form":      "application/x-www-form-urlencoded",
+		"multipart": "multipart/form-data",
+		"raw":       "application/octet-stream",
+		"string":    "text/plain",
+	}
+)
 
 func UnmarshalJsonFromResponseBody(body io.Reader, out interface{}) error {
 	data, err := io.ReadAll(body)
