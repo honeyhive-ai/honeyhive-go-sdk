@@ -32,11 +32,11 @@ func newMetric(defaultClient, securityClient HTTPClient, serverURL, language, sd
 
 // CreateMetric - Create Metric
 // This endpoint adds a metric to a task.
-func (s *metric) CreateMetric(ctx context.Context, request operations.CreateMetricRequest) (*operations.CreateMetricResponse, error) {
+func (s *metric) CreateMetric(ctx context.Context, request shared.Metric) (*operations.CreateMetricResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/metrics"
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "Request", "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -67,6 +67,7 @@ func (s *metric) CreateMetric(ctx context.Context, request operations.CreateMetr
 	res := &operations.CreateMetricResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:
@@ -96,11 +97,11 @@ func (s *metric) CreateMetric(ctx context.Context, request operations.CreateMetr
 
 // FindMetrics - Get Metrics
 // This endpoint gets the metrics associated with a particular task.
-func (s *metric) FindMetrics(ctx context.Context, request operations.FindMetricsRequest) (*operations.FindMetricsResponse, error) {
+func (s *metric) FindMetrics(ctx context.Context, request shared.FindMetricsInput) (*operations.FindMetricsResponse, error) {
 	baseURL := s.serverURL
 	url := strings.TrimSuffix(baseURL, "/") + "/metrics"
 
-	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request)
+	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, "Request", "json")
 	if err != nil {
 		return nil, fmt.Errorf("error serializing request body: %w", err)
 	}
@@ -128,6 +129,7 @@ func (s *metric) FindMetrics(ctx context.Context, request operations.FindMetrics
 	res := &operations.FindMetricsResponse{
 		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
+		RawResponse: httpRes,
 	}
 	switch {
 	case httpRes.StatusCode == 200:

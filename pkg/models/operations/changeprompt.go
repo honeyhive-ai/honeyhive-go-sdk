@@ -2,15 +2,12 @@ package operations
 
 import (
 	"github.com/honeyhive-ai/honeyhive-go-sdk/pkg/models/shared"
+	"net/http"
 )
 
-type ChangePromptPathParams struct {
-	ID string `pathParam:"style=simple,explode=false,name=id"`
-}
-
 type ChangePromptRequest struct {
-	PathParams ChangePromptPathParams
-	Request    shared.Prompt `request:"mediaType=application/json"`
+	Prompt shared.Prompt `request:"mediaType=application/json"`
+	ID     string        `pathParam:"style=simple,explode=false,name=id"`
 }
 
 type ChangePromptResponse struct {
@@ -18,4 +15,5 @@ type ChangePromptResponse struct {
 	ContentType           string
 	Prompt                *shared.Prompt
 	StatusCode            int
+	RawResponse           *http.Response
 }
