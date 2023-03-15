@@ -2,14 +2,11 @@ package operations
 
 import (
 	"github.com/honeyhive-ai/honeyhive-go-sdk/pkg/models/shared"
+	"net/http"
 )
 
-type DeleteDatasetPathParams struct {
-	Name string `pathParam:"style=simple,explode=false,name=name"`
-}
-
 type DeleteDatasetRequest struct {
-	PathParams DeleteDatasetPathParams
+	Name string `pathParam:"style=simple,explode=false,name=name"`
 }
 
 type DeleteDatasetResponse struct {
@@ -17,4 +14,5 @@ type DeleteDatasetResponse struct {
 	ContentType           string
 	DeleteDatasetResponse *shared.DeleteDatasetResponse
 	StatusCode            int
+	RawResponse           *http.Response
 }

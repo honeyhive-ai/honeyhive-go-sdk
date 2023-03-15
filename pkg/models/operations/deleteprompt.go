@@ -2,14 +2,11 @@ package operations
 
 import (
 	"github.com/honeyhive-ai/honeyhive-go-sdk/pkg/models/shared"
+	"net/http"
 )
 
-type DeletePromptPathParams struct {
-	ID string `pathParam:"style=simple,explode=false,name=id"`
-}
-
 type DeletePromptRequest struct {
-	PathParams DeletePromptPathParams
+	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
 type DeletePromptResponse struct {
@@ -17,4 +14,5 @@ type DeletePromptResponse struct {
 	ContentType           string
 	PromptDeleteResponse  *shared.PromptDeleteResponse
 	StatusCode            int
+	RawResponse           *http.Response
 }

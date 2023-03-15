@@ -11,22 +11,18 @@ import (
 )
 
 func main() {
-    s := honeyhive.New(honeyhive.WithSecurity(
-        shared.Security{
-            BearerAuth: shared.SchemeBearerAuth{
-                Authorization: "Bearer YOUR_BEARER_TOKEN_HERE",
-            },
-        },
-    ))
-    
-    req := operations.CreateDatasetRequest{
-        Request: shared.Dataset{
-            Description: "unde",
-            File: "deserunt",
-            Name: "porro",
-            Purpose: "nulla",
-            Task: "id",
-        },
+    s := honeyhive.New(
+        WithSecurity(        shared.Security{
+            BearerAuth: "Bearer YOUR_BEARER_TOKEN_HERE",
+        }),
+    )
+
+    req := shared.Dataset{
+        Description: "unde",
+        File: "deserunt",
+        Name: "porro",
+        Purpose: "nulla",
+        Task: "id",
     }
 
     ctx := context.Background()
