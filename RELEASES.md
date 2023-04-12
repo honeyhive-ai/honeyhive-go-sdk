@@ -23,3 +23,59 @@ Based on:
 - Speakeasy CLI 1.7.1 https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [Go v0.4.2] https://github.com/honeyhive-ai/honeyhive-go-sdk/releases/tag/v0.4.2 - .
+
+## 2023-03-15 04:17:17
+### Changes
+Based on:
+- OpenAPI Doc 0.0.1 ./openapi.yaml
+- Speakeasy CLI 1.11.0 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.5.0] https://github.com/honeyhive-ai/honeyhive-go-sdk/releases/tag/v0.5.0 - .
+
+## 2023-03-16 02:35:28
+### Changes
+Based on:
+- OpenAPI Doc 0.0.1 ./openapi.yaml
+- Speakeasy CLI 1.12.0 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.6.0] https://github.com/honeyhive-ai/honeyhive-go-sdk/releases/tag/v0.6.0 - .
+
+## 2023-03-17 02:30:56
+### Changes
+Based on:
+- OpenAPI Doc 0.0.1 ./openapi.yaml
+- Speakeasy CLI 1.12.1 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.6.1] https://github.com/honeyhive-ai/honeyhive-go-sdk/releases/tag/v0.6.1 - .
+
+## 2023-03-18 02:29:13
+### Changes
+Based on:
+- OpenAPI Doc 0.0.1 ./openapi.yaml
+- Speakeasy CLI 1.12.3 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.6.2] https://github.com/honeyhive-ai/honeyhive-go-sdk/releases/tag/v0.6.2 - .
+
+## 2023-03-21 02:20:56
+### Changes
+Based on:
+- OpenAPI Doc 0.0.1 ./openapi.yaml
+- Speakeasy CLI 1.12.4 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.6.3] https://github.com/honeyhive-ai/honeyhive-go-sdk/releases/tag/v0.6.3 - .
+
+## 2023-03-22 02:25:07
+### Changes
+Based on:
+- OpenAPI Doc 0.0.1 ./openapi.yaml
+- Speakeasy CLI 1.13.0 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.7.0] https://github.com/honeyhive-ai/honeyhive-go-sdk/releases/tag/v0.7.0 - .
+
+## 2023-04-12 00:36:30
+### Changes
+Based on:
+- OpenAPI Doc 0.0.1 ./openapi.yaml
+- Speakeasy CLI 1.19.7 (2.17.9) https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v0.8.0] https://github.com/honeyhive-ai/honeyhive-go-sdk/releases/tag/v0.8.0 - .
